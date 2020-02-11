@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<!--Конфигурация для testNG фреймворка-->
+<suite name="Cross Browser  Suite">
+    <test name="Login Tests Chrome">
+        <parameter name="browser" value="chrome" />
+        <packages>
+            <package name="com.test" />
+        </packages>
+        <classes>
+            <class name="com.test.MainTest" />
+        </classes>
+    </test>
+
+    <test name="Api Tests Chrome">
+        <parameter name="browser" value="chrome" />
+        <packages>
+            <package name="com.test" />
+        </packages>
+        <classes>
+            <class name="com.test.ApiTest" />
+        </classes>
+    </test>
+
+    <test name="Login Tests Firefox">
+        <parameter name="browser" value="firefox" />
+        <packages>
+            <package name="com.test" />
+        </packages>
+        <classes>
+            <class name="com.test.MainTest" />
+        </classes>
+    </test>
+</suite>
