@@ -25,12 +25,14 @@ public class MainTest extends BaseTest {
     @Test(testName = "Login Tests Chrome", dataProvider = "testAuthDataProvider")
     public void firstTest(String login, String password, String expectedMessage) {
 
-        String commonProperties = "src/main/resources/automation-practice.properties";
+ //       String automationPracticeProperties = "src/main/resources/automation-practice.properties";
+        String automationPracticeProperties = System.getProperty("automation-practice.cfg");
+//        Properties properties = new Properties();
         Properties properties = new Properties();
 
-        if (commonProperties != null) {
+        if (automationPracticeProperties != null) {
             try {
-                properties.load(new FileReader(commonProperties));
+                properties.load(new FileReader(automationPracticeProperties));
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -31,9 +31,9 @@ public class BaseTest {
 
     private void initDrivers(String browser) {
 
-//      String commonProperties = System.getProperty("common.cfg");
+      String commonProperties = System.getProperty("automation.practice.cfg");
 
-        String commonProperties = "src/main/resources/common.properties";
+//        String commonProperties = "src/main/resources/common.properties";
         Properties properties = new Properties();
 
         if(commonProperties != null) {

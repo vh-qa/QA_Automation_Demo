@@ -20,8 +20,10 @@
         <poi.ooxml.version>4.1.1</poi.ooxml.version>
 
         <!-- Configs -->
-<!--    <common.config>${basedir}/src/main/resources/common.properties</common.config> -->
-        <common.config>${project.basedir}/src/main/resources/common.properties</common.config>
+
+<!--    <sourceDirectory>src/main/resources</sourceDirectory>  -->
+    <common.config>${basedir}/src/main/resources/common.properties</common.config>
+<!--    <common.config>/src/main/resources/common.properties</common.config>  -->
 <!--    <common.config>${project.basedir}/target/classes/common.properties</common.config> -->
         <automation.practice.config>${project.basedir}/src/main/resources/automation-practice.properties</automation.practice.config>
 
@@ -94,6 +96,17 @@
     </dependencies>
 
     <build>
+<!--
+        <sourceDirectory>src/main/resources</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+-->
         <plugins>
             <plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
@@ -105,6 +118,10 @@
                             <property>
                                 <name>common.cfg</name>
                                 <value>${common.config}</value>
+                            </property>
+                            <property>
+                                <name>automation.practice.cfg</name>
+                                <value>${automation.practice.config}</value>
                             </property>
                         </systemProperties>
                         <!--Путь к конфигурации testng.xml-->
