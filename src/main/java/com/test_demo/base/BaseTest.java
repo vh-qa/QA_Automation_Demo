@@ -2,14 +2,18 @@ package com.test_demo.base;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.*;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -31,9 +35,9 @@ public class BaseTest {
 
     private void initDrivers(String browser) {
 
-      String commonProperties = System.getProperty("automation.practice.cfg");
+//      String commonProperties = System.getProperty("automation.practice.cfg");
 
-//        String commonProperties = "src/main/resources/common.properties";
+        String commonProperties = "src/main/resources/common.properties";
         Properties properties = new Properties();
 
         if(commonProperties != null) {

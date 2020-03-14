@@ -25,8 +25,8 @@ public class MainTest extends BaseTest {
     @Test(testName = "Login Tests Chrome", dataProvider = "testAuthDataProvider")
     public void firstTest(String login, String password, String expectedMessage) {
 
- //       String automationPracticeProperties = "src/main/resources/automation-practice.properties";
-        String automationPracticeProperties = System.getProperty("automation-practice.cfg");
+        String automationPracticeProperties = "src/main/resources/automation-practice.properties";
+ //       String automationPracticeProperties = System.getProperty("automation-practice.cfg");
 //        Properties properties = new Properties();
         Properties properties = new Properties();
 
