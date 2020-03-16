@@ -15,7 +15,6 @@ import java.net.URL;
 
 public class SeleniumGridTest {
 
-
     private WebDriver driver;
     private String baseUrl;
     private String nodeUrl;
@@ -39,6 +38,7 @@ public class SeleniumGridTest {
         options.setCapability(CapabilityType.PLATFORM_NAME, Platform.WINDOWS);
         options.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
         options.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+        options.addArguments("headless"); //Running tests without opening a browser window
 
         driver = new RemoteWebDriver(new URL(nodeUrl), options);
         driver.manage().window().maximize();
